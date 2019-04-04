@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Sidebar, Menu, Divider, Button, ButtonOr } from 'semantic-ui-react';
+import { Sidebar, Menu, Divider, Button } from 'semantic-ui-react';
 
 class ColorPanel extends Component {
   state = {  }

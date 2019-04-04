@@ -8,8 +8,9 @@ body,
 
 /* Messages.js */
 .messages {
-  height: 440px;
-  overflow-y: scroll;
+  height: 70vh;
+  overflow-y: auto;
+  max-width: 100% !important;
 }
 
 /* MessagesForm.js */
@@ -20,4 +21,19 @@ body,
   left: 0;
   right: 1em;
   z-index: 200;
+}
+
+/* Message.js */
+.message__self {
+  border-left: 2px solid orange;
+  padding-left: 8px;
+}
+
+.message__image {
+  padding: 1em;
+}
+
+/* ProgressBar.js */
+.progress__bar {
+  margin: 0.3em 0 0 0 !important;
 }

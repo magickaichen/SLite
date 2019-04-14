@@ -23,14 +23,26 @@ class MessagesForm extends Component {
     percentUploaded: 0
   };
 
+  componentWillUnmount() {
+    if (this.state.uploadTask !== null) {
+      this.state.uploadTask.cancel();
+      this.setState({ uploadTask: null });
+    }
+  }
+
   openModal = () => this.setState({ modal: true });
+  
   closeModal = () => this.setState({ modal: false });
 
   handleChange = event => {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  handleTyping = () => {
+  handleTyping = event => {
+    /* If both Ctrl and Enter key has been pressed*/
+    if (event.ctrlKey && event.keyCode === 13 ) {
+      this.sendMessage();
+    }
     const { channel, user, message, typingRef } = this.state;
     if (message) {
       typingRef

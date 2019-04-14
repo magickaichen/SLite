@@ -1,4 +1,4 @@
-# slack-clone
+# SLite
 SLite - An online IM web application that is a lite version mockup of [Slack](https://slack.com/), with following features implemented:
 - Channel-based instant messaging w/ emoji support and image uploads
 - DM to other users within the organization

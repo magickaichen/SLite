@@ -65,7 +65,6 @@ class Messages extends Component {
 
   removeListeners = listeners => {
     listeners.forEach(listener => {
-      console.log(listener.ref);
       listener.ref.child(listener.id).off(listener.event);
     });
   }
@@ -75,6 +74,13 @@ class Messages extends Component {
   };
 
   addListeners = channelId => {
+    const messagesRef = this.getMessagesRef();
+    /* TODO: Find better way to handle loading state */
+    messagesRef.child(channelId).once("value").then(data => {
+      if(!data.val()) {
+        this.setState({ messagesLoading: false });
+      }
+    })
     this.addMessageListener(channelId);
     this.addTypingListener(channelId);
   };
@@ -98,6 +104,7 @@ class Messages extends Component {
     const ref = this.getMessagesRef();
     ref.child(channelId).on("child_added", snap => {
       loadedMessages.push(snap.val());
+      console.log(loadedMessages);
       this.setState({
         messages: loadedMessages,
         messagesLoading: false
@@ -191,7 +198,7 @@ class Messages extends Component {
       : "";
   };
 
-  displayMessageSkeleton = loading =>
+  displayMessageSkeleton = (loading) =>
     loading ? (
       <React.Fragment>
         {[...Array(15)].map((_, i) => (

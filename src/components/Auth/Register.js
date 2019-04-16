@@ -83,7 +83,7 @@ class Register extends Component {
           createdUser.user
             .updateProfile({
               displayName: this.state.username,
-              photoURL: `http://gravatar.com/avatar/${md5(
+              photoURL: `https://gravatar.com/avatar/${md5(
                 createdUser.user.email
               )}?d=identicon`
             })
@@ -136,8 +136,8 @@ class Register extends Component {
       <Grid textAlign="center" verticalAlign="middle" className="app">
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as="h1" icon color="orange" textAlign="center">
-            <Icon name="code" color="orange" />
-            Register for DevChat
+            <Icon name="rocketchat" color="orange" />
+            Register for SLite
           </Header>
           <Form onSubmit={this.handleSubmit} size="large">
             <Segment stacked>

@@ -9,3 +9,26 @@ SLite - An online IM web application that is a lite version mockup of [Slack](ht
 
 ## Demo
 Live Demo here: [SLite](https://react-slack-clone-f1bc4.firebaseapp.com/)
+
+## Use This Project
+####Clone this project (or download as zip)
+```bash
+git clone git@github.com:magickaichen/SLite.git
+```
+####Install all dependencies
+- Use npm:
+```bash
+npm install
+```
+- Or use Yarn:
+```bash
+yarn
+```
+#### Start development server
+```bash
+npm start
+```
+Or (if use Yarn)
+```bash
+yarn start
+```
